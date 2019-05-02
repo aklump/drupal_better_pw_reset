@@ -45,5 +45,16 @@ function _better_pw_reset_pass_after_build(array $element, FormStateInterface $f
   $element['pass1']['#required'] = TRUE;
   $element['pass2']['#required'] = TRUE;
 
+  if (!$account->getPassword()) {
+    // Creating a password for the first time.
+    $element['pass1']['#title'] = t('Create your password');
+  }
+  else {
+    // Resetting an existing password.
+    $element['pass1']['#title'] = t('Enter new password');
+  }
+  $element['#description'] = t('Enter your desired password in both fields, then click <em>Save password</em>.');
+  $element['pass2']['#title'] = t('Enter same password, again');
+
   return $element;
 }
