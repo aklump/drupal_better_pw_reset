@@ -1,6 +1,6 @@
 # Better Password Reset Drupal Module
 
-![Better Pw Reset](help/images/better-pw-reset.jpg)
+![Better Pw Reset](help/images/better-pw-reset.png)
 
 ## Summary
 
@@ -9,8 +9,6 @@ When a user registers an account and clicks on the log in link, they are present
 The other scenario this module handles is when an existing user requests a new password.  The same process as described above applies here as well.
 
 My hope is that this reduces confusion and frustration and creates a better experience overall for Drupal users.
-
-**Visit <https://aklump.github.io/better_pw_reset> for full documentation.**
 
 ## Installation
 
