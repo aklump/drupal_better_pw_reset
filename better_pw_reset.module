@@ -33,7 +33,7 @@ function better_pw_reset_form_user_form_alter(&$form, FormStateInterface $form_s
   ];
   foreach (Element::children($form['account']) as $key) {
     if (!in_array($key, $allowed_account_keys)) {
-      $form['account'][$key]['#access'] = FALSE;
+      $form['account'][$key]['#type'] = 'hidden';
     }
   }
   $form['actions']['submit']['#value'] = t('Save password');
