@@ -1,19 +1,7 @@
-name: Better Password Reset
-description: Improves on core's password reset user experience.
+name: 'Better Password Reset'
+description: 'Improves on core''s password reset user experience.'
 package: Other
-
 type: module
 core: 8.x
-version: 8.x-1.0-rc0
-
-#dependencies:
-#  - datetime:datetime
-#  - link:link
-#  - drupal:views
-#
-#test_dependencies:
-# - drupal:image
-
+version: 8.x-1.0-rc1
 configure: better_pw_reset.settings
-
-# read more at https://www.drupal.org/node/2000204
