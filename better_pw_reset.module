@@ -1,0 +1,49 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Element;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Hide all but account.pass and make account.pass required when resetting
+ * password.
+ */
+function better_pw_reset_form_user_form_alter(&$form, FormStateInterface $form_state) {
+  if (!$form_state->get('user_pass_reset') || !isset($form['account']['pass'])) {
+    return;
+  }
+  $form['account']['pass']['#after_build'][] = '_better_pw_reset_pass_after_build';
+  $allowed_keys = [
+    'form_build_id',
+    'form_id',
+    'form_token',
+    'language',
+    'footer',
+    'actions',
+    'account',
+  ];
+  foreach (Element::children($form) as $key) {
+    if (!in_array($key, $allowed_keys)) {
+      $form[$key]['#access'] = FALSE;
+    }
+  }
+  $allowed_account_keys = [
+    'pass',
+  ];
+  foreach (Element::children($form['account']) as $key) {
+    if (!in_array($key, $allowed_account_keys)) {
+      $form['account'][$key]['#access'] = FALSE;
+    }
+  }
+  $form['actions']['submit']['#value'] = t('Save password');
+}
+
+function _better_pw_reset_pass_after_build(array $element, FormStateInterface $form_state): array {
+  $account = $form_state->get('user');
+  $form_state->setRedirect('entity.user.edit_form', ['user' => $account->id()]);
+  $element['pass1']['#required'] = TRUE;
+  $element['pass2']['#required'] = TRUE;
+
+  return $element;
+}
