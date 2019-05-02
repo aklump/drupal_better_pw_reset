@@ -1,4 +1,4 @@
-![Better Pw Reset](images/better-pw-reset.jpg)
+![Better Pw Reset](images/better-pw-reset.png)
 
 ## Summary
 
