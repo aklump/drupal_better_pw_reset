@@ -3,5 +3,5 @@ description: 'Improves on core''s password reset user experience.'
 package: Other
 type: module
 core_version_requirement: '^8 || ^9'
-version: 8.x-1.0-rc1
+version: 8.x-1.0-rc2
 configure: better_pw_reset.settings

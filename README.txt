@@ -1,6 +1,4 @@
-                      Better Password Reset Drupal Module
-
-   Better Pw Reset
+              Better Password Reset Drupal Module Better Pw Reset
 
 Summary
 
