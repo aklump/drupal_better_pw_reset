@@ -1,6 +1,4 @@
-# Better Password Reset Drupal Module
-
-![Better Pw Reset](help/images/better-pw-reset.png)
+# Better Password Reset Drupal Module![Better Pw Reset](help/images/better-pw-reset.png)
 
 ## Summary
 
